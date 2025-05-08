@@ -9,7 +9,26 @@ int budget(int income)
     printf("Budget Breakdown:\n");
 
     // Prints floats above to two decimal places (eg. 500.27)
-    printf("10%%: %.2f for debts & savings", ten_percent);
-    printf("20%%: %.2f for personal wants", twenty_percent);
-    printf("70%%: %.2f for your essentials", seventy_percent);
+    printf("10%%: %.2f for debts & savings\n", ten_percent);
+    printf("20%%: %.2f for personal wants\n", twenty_percent);
+    printf("70%%: %.2f for your essentials\n", seventy_percent);
+}
+
+int main()
+{
+    int income; // Income variable
+    printf("Enter your income: ");  // Ask user for their income
+    scanf("%d", &income);   // Allows user to type income
+
+    if (income < 0)
+    {
+        printf("Invalid Income. Can't be less than 0.\n");
+        return 1;
+    }
+    else 
+    {
+        printf("Your income is: %d\n\n", income);   // Prints income to CLI
+        budget(income); // Calls the budget function
+    }
+    return 0;
 }
